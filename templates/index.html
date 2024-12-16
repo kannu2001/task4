@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row"><!--main sectioin satrt-->
+   
+    <div class="col-md-12 mt-3 bg-light p-3"><!--product list start-->
+      <div class="row">
+        {% for x in data %}
+        <div class="col-md-3">
+          <div class="card" style="width: 100%;">
+            <img src="{{x.pimage.url}}" class="card-img-top" alt="..." style="aspect-ratio: 3/3;">
+            <div class="card-body">
+              <h5 class="card-title">{{x.name}}</h5>
+              <p class="card-text">{{x.pdetails}}</p>
+              <p class="card-text">{{x.price}}</p>
+              <a href="/product_details/{{x.id}}" class="btn btn-danger">See Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+    </div><!--product list end-->
+</div><!--main sectioin end-->
+
+
+
+
+{% endblock 'main' %}

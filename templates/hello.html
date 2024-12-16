@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+</head>
+<body>
+    <h1>hello from templates folder.....!!!</h1>
+    <h4>value of x is : {{x}}</h4>
+    <h4>value of y is : {{y}}</h4>
+    {% comment %}
+    {% if x > y and x > z %}
+        <h3>{{x}} is greater</h3>
+    {% elif y > x and y > z %}
+        <h3>{{y}} is greater</h3> 
+    {% else %}
+        <h3>{{z}} is greater</h3>
+    {% endif %}
+
+    {% endcomment %}
+
+    {% for i in l %}
+            {{i}}
+    {% endfor %}
+
+    
+</body>
+</html>
