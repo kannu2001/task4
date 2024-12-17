@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <!-- Name Field -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" name="pname" placeholder="Enter product name">
+        </div>
+      </div>
+
+      <!-- Price Field -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label  class="form-label">Price</label>
+          <input type="number" class="form-control" name="price" placeholder="Enter price">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Category Field -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select class="form-select" name="pcat">
+            <option selected>Select a category</option>
+            <option value="1">Mobile</option>
+            <option value="2">Shoes</option>
+            <option value="3">Cloths</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Details Field -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="details" class="form-label">Product Details</label>
+          <textarea class="form-control" name="pdetail" rows="3" placeholder="Enter product details"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Image Field -->
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="image" class="form-label">Product Image</label>
+          <input type="file" class="form-control" name="pimg">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  
+{% endblock 'main' %}

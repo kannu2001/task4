@@ -8,4 +8,4 @@ class Product(models.Model):
     cat=models.IntegerField(verbose_name='Category',choices=CAT)
     pdetails=models.CharField(max_length=50,verbose_name='Product Details')
     is_active=models.BooleanField(default=True)
-    pimage=models.ImageField(upload_to='image')
+    pimage=models.ImageField(upload_to='media/')

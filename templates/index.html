@@ -4,6 +4,7 @@
 <div class="row"><!--main sectioin satrt-->
    
     <div class="col-md-12 mt-3 bg-light p-3"><!--product list start-->
+      <div><a href="/add_product" class="btn btn-danger">Add Product</a></div>
       <div class="row">
         {% for x in data %}
         <div class="col-md-3">
@@ -14,6 +15,7 @@
               <p class="card-text">{{x.pdetails}}</p>
               <p class="card-text">{{x.price}}</p>
               <a href="/product_details/{{x.id}}" class="btn btn-danger">See Details</a>
+              <a href="/delete/{{x.id}}" class="btn btn-danger">Delete</a>
             </div>
           </div>
         </div>

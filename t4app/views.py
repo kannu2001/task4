@@ -11,15 +11,16 @@ import random
 
 
 def product(request):
-    uid=request.user.id
-    #print('logging user',uid)
-    p=Product.objects.filter(is_active=True)
-    #print(p)
+    p=Product.objects.all    #print(p)
     context={}
     context['data']=p 
     return render(request,'index.html',context)
 
-
+def delete(request,rid):
+    m=Product.objects.filter(id=rid)
+    #print(m)
+    m.delete()
+    return redirect('/product')
 
 
 def product_details(request,pid):
@@ -28,7 +29,20 @@ def product_details(request,pid):
     context['data']=p
     return render(request,'product_details.html',context)
 
+def add_product(request):
+    if request.method=="GET":
+        return render(request,'add_product.html')
+    else:
+        n=request.POST['pname']
+        p=request.POST['price']
+        cat=request.POST['pcat']
+        pd=request.POST['pdetail']
+        img=request.POST['pimg']
+        print(img)
 
+        m=Product.objects.create(name=n,price=p,cat=cat,pdetails=pd,pimage=img)
+        m.save()
+        return redirect('/product')
 
 
 def search(request):
